@@ -1,7 +1,3 @@
-DFTB+_ver17_recipes_win
-
-----------
-
 Single core calculation examples on DFTB+ 17.1 (Windows Binary).
 
 ----------
