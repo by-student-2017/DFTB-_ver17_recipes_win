@@ -3,7 +3,7 @@ DFTB+_ver17_recipes_win
 
 Single core calculation examples on DFTB+ 17.1 (Windows Binary).
 
-
+----------
 
 calculational conditions
 
@@ -13,7 +13,7 @@ Memory: 8 GB
 
 OS: Windows 10 (64 bit)
 
-
+----------
 
 References
 
