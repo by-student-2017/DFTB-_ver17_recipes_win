@@ -4,7 +4,8 @@ DFTB+_ver17_recipes_win
 Single core calculation examples on DFTB+ 17.1 (Windows Binary).
 
 
-・calculational conditions
+
+calculational conditions
 
 CPU: Intel(R) Core(TM) m3-8100Y CPU @ 1.10GHz 1.61GHz
 
@@ -13,7 +14,8 @@ Memory: 8 GB
 OS: Windows 10 (64 bit)
 
 
-・References
+
+References
 
 [1] https://dftbplus-recipes.readthedocs.io/en/stable/
 
