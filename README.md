@@ -15,5 +15,7 @@ OS: Windows 10 (64 bit)
 References
 
 [1] https://dftbplus-recipes.readthedocs.io/en/stable/
+解凍したファイルをCドライブに移すと run をクリックすれば動作するようにもしています。
+run または run.bat がないファイルは「C:\DFTB17.1Windows\DFTB17.1Windows-CygWin\dftb+.exe」を PowerShell で実行してください。
 
 [2] https://sites.google.com/view/djmolplatform/get-dftb-17-1-windows
