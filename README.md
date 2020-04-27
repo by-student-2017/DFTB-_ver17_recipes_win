@@ -27,4 +27,5 @@ run または run.bat がないファイルは「C:\DFTB17.1Windows\DFTB17.1Windows-CygWin\d
 
 
 jmolも同様にCドライブに移してください。run または run.bat での設定では次のようになります。C:\jmol-14.30.2\jmol.jar
+
 ----------
