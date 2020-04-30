@@ -1,0 +1,7 @@
+TE(ZnO_Vo0) - TE(ZnO) + TE(O2)/2 = (-7274.9921 - -7361.4389 + -176.2437/2) = -1.67505 eV
+
+ZnO: -2.3332 eV/atom
+
+ZnO_Vo0
+O-poor (Zn-rich): -1.67505 + -2.3332 eV
+O-rich (Zn-poor): -1.67505 eV

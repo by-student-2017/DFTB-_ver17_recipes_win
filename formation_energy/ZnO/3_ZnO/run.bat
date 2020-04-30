@@ -1,7 +1,7 @@
 copy dftb_in_scf.hsd dftb_in.hsd 
 C:\DFTB17.1Windows\DFTB17.1Windows-CygWin\dftb+.exe
 
-find "Total energy:" <detailed.out> energy.dat
+find "Total energy:" <detailed.out> total_energy.dat
 
 #copy dftb_in_dos.hsd dftb_in.hsd 
 #C:\DFTB17.1Windows\DFTB17.1Windows-CygWin\dftb+.exe

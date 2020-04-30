@@ -2,6 +2,8 @@ copy dftb_in_scf.hsd dftb_in.hsd
 C:\DFTB17.1Windows\DFTB17.1Windows-CygWin\dftb+.exe
 
 find "Total energy:" <detailed.out> total_energy.dat
+find "Fermi level:" <detailed.out> fermi_energy.dat
+C:\jmol-14.30.2\jmol.jar geo_end.xyz
 
 #copy dftb_in_dos.hsd dftb_in.hsd 
 #C:\DFTB17.1Windows\DFTB17.1Windows-CygWin\dftb+.exe
