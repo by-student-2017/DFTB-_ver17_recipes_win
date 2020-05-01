@@ -5,7 +5,7 @@ Geometry = GenFormat {
 Driver = {}
 #Driver = ConjugateGradient {
 #  LatticeOpt = Yes
-#  MovedAtoms = {}
+#  MovedAtoms = 1:-1
 #}
 
 Hamiltonian = DFTB {
@@ -71,6 +71,21 @@ Hamiltonian = DFTB {
 Options = {
   WriteAutotestTag = Yes
   CalculateForces = Yes
+}
+
+Analysis {
+  ProjectStates {
+    Region {
+      Atoms = Zn
+      ShellResolved = Yes
+      Label = "dos_zn"
+    }
+    Region {
+      Atoms = O
+      ShellResolved = Yes
+      Label = "dos_o"
+     }
+  }
 }
 
 ParserOptions = {

@@ -5,7 +5,7 @@ Geometry = GenFormat {
 Driver = {}
 #Driver = ConjugateGradient {
 #  LatticeOpt = Yes
-#  MovedAtoms = {}
+#  MovedAtoms = 1:-1
 #}
 
 Hamiltonian = DFTB {

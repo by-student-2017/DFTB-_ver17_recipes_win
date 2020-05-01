@@ -8,6 +8,16 @@ array data[N]
 # save
 stats "tdos.dat" using (data[$0+1] = $1, 0) nooutput
 
+# get fermi energy data
+set table "info_gnu.dat"
+plot "info.dat" u 3:5 w p
+stats "info_gnu.dat"
+NI = STATS_records
+array EF[NI]
+stats "info_gnu.dat" using (EF[$0+1] = $2, 0) nooutput
+ef = EF[1]
+unset table
+
 # gauss broadening
 gauss(x,c,r,s)=r*1/(s*sqrt(2*pi))*exp(-0.5*((x-c)/s)**2)
 stats "tdos.dat" using 1:2 nooutput
@@ -32,3 +42,12 @@ set xlabel "Energy (eV)"
 set ylabel "Density of States (arb.units)"
 #set xrange[-15:5]
 plot "tdos.plot" u 1:2 w l t "total dos"
+
+# plot
+set terminal png
+set output "tdos_BE.png"
+set xlabel "Binding Energy (eV)"
+set ylabel "Density of States (arb.units)"
+set xrange [*:*] reverse
+set yzeroaxis
+plot "tdos.plot" u (ef-$1):2 w l t "total dos"

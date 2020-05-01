@@ -73,6 +73,21 @@ Options = {
   CalculateForces = Yes
 }
 
+Analysis {
+  ProjectStates {
+    Region {
+      Atoms = Zn
+      ShellResolved = Yes
+      Label = "dos_zn"
+    }
+    Region {
+      Atoms = O
+      ShellResolved = Yes
+      Label = "dos_o"
+     }
+  }
+}
+
 ParserOptions = {
   ParserVersion = 3
 }
