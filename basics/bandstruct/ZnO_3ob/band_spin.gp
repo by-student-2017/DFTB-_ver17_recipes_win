@@ -11,7 +11,7 @@ array data[TN]
 stats "band.dat" using (data[$0+1] = $1, 0) nooutput
 
 # arrange data
-set print "band.plot"
+set print "band_spin.plot"
 do for [i=1:BN/2]{
   do for [j=PN*(i-1)+1:PN*i]{
     print i,data[j],data[j+BN/2]
@@ -20,16 +20,16 @@ do for [i=1:BN/2]{
 
 # plot
 set terminal png
-set output "band.png"
+set output "band_spin.png"
 unset xtics
 set yrange [-7:5]
 set ylabel "Energy (eV)"
-plot "band.plot" u 1:2 w p pt 7 ps 0.6 t "up", "band.plot" u 1:2 w p pt 7 ps 0.6 t "down"
+plot "band_spin.plot" u 1:2 w p pt 7 ps 0.6 t "up", "band_spin.plot" u 1:3 w p pt 7 ps 0.6 t "down"
 
 # plot
 set terminal png
-set output "band_wide.png"
+set output "band_wide_spin.png"
 unset xtics
 unset yrange
 set ylabel "Energy (eV)"
-plot "band.plot" u 1:2 w p pt 7 ps 0.6 t "up", "band.plot" u 1:2 w p pt 7 ps 0.6 t "down"
+plot "band_spin.plot" u 1:2 w p pt 7 ps 0.6 t "up", "band_spin.plot" u 1:3 w p pt 7 ps 0.6 t "down"
