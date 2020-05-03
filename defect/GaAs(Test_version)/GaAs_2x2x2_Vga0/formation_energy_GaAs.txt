@@ -1,0 +1,7 @@
+TE(GaAs_Vga0) - TE(GaAs) + TE(Ga)/4 = -1927.6220 - -2151.2868 + -877.9200/4 = 4.1848 eV
+
+GaAs: -1.1861 eV
+
+GaAs_Vga0
+Ga-poor (As-rich): 4.1848 + -1.1861 eV
+Ga-rich (As-poor): 4.1848 eV

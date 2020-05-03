@@ -1,0 +1,82 @@
+Geometry = GenFormat {
+    4  F
+ Ga
+    1 1    0.6562500000E+00    0.3437400000E+00    0.4181500000E+00
+    2 1    0.8437400000E+00    0.1562600000E+00    0.9182000000E+00
+    3 1    0.3437400000E+00    0.6562600000E+00    0.5818000000E+00
+    4 1    0.1562600000E+00    0.8437400000E+00    0.8180000000E-01
+    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    0.5748913815E+01    0.9373318738E-01    0.3976397616E-03
+   -0.2696110599E+01    0.5078468094E+01    0.5259056768E-03
+    0.3056414917E-03    0.7047094266E-03    0.5394052152E+01
+
+}
+
+#Driver = {}
+Driver = ConjugateGradient {
+  LatticeOpt = Yes
+  MovedAtoms = {}
+}
+
+Hamiltonian = DFTB {
+  SCC = Yes
+  SCCTolerance = 1.0E-8
+  MaxSCCIterations = 1000
+  Mixer = Broyden {}
+  MaxAngularMomentum = {
+    Ga = "d"
+  }
+  Charge = 0.0
+  SpinPolarisation = Colinear {
+    UnpairedElectrons = 0.0
+  }
+  SpinConstants = {  # These are dummy spin constants, never use them!
+    Ga = {
+ -4.100000000000000E-002 -4.000000000000000E-002 -4.000000000000000E-002
+ -4.000000000000000E-002 -4.200000000000000E-002 -4.200000000000000E-002
+ -4.000000000000000E-002 -4.200000000000000E-002 -5.300000000000000E-002
+    }
+  }
+  Filling = Fermi {
+    Temperature [Kelvin] = 1.000000000000000E-006
+  }
+  SlaterKosterFiles = Type2FileNames {
+    Prefix = ".\hyb-0-2\"
+    Separator = "-"
+    Suffix = ".skf"
+  }
+  KPointsAndWeights = SupercellFolding {
+   3 0 0
+   0 3 0
+   0 0 3
+   0.5 0.5 0.5
+  }
+  #OrbitalPotential = {
+  #  Functional = {pSIC}
+  #  Ga = {
+  #    Shells = {1 2}
+  #    #UJ = 0.05209025
+  #    UJ = 0.039462
+  #  }
+  #  Ga = {
+  #    Shells = {3}
+  #    #UJ = 0.05209025
+  #    UJ = 0.039462
+  #  }
+  #}
+}
+
+Options = {
+  WriteAutotestTag = Yes
+  CalculateForces = Yes
+}
+
+ParserOptions = {
+  ParserVersion = 3
+}
+
+#Parallel {
+  # Allow OMP threads explicitely to test for hybrid parallelisation with
+  # MPI-binary. (Check the manual before using this in production runs!)
+#  UseOmpThreads = Yes
+#}
