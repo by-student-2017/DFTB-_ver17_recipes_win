@@ -22,7 +22,7 @@ do for [i=1:BN/2]{
 set terminal png
 set output "band.png"
 unset xtics
-set yrange [-7:5]
+set yrange [-8:-2]
 set ylabel "Energy (eV)"
 plot "band.plot" u 1:2 w p pt 7 ps 0.6 t "up", "band.plot" u 1:2 w p pt 7 ps 0.6 t "down"
 
