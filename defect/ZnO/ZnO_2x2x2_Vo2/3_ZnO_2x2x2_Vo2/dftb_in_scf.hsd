@@ -96,6 +96,7 @@ Hamiltonian = DFTB {
   Charge = 2.0
   SpinPolarisation = Colinear {
     UnpairedElectrons = 0.0
+    RelaxTotalSpin = Yes
   }
   SpinConstants = {  # These are dummy spin constants, never use them!
     Zn = {
