@@ -35,7 +35,7 @@ do for [i=1:300]{
   tdos_down[i] = 0.0
   do for [j=1:BN/2]{
     tdos_up[i] = tdos_up[i] + gauss(eV[i],data[j],1,0.03)
-    tdos_down[i] = tdos_down[i] + gauss(eV[i],data[j+BN/2],1,0.03)
+    tdos_down[i] = tdos_down[i] + gauss(eV[i],data[j+TN/2],1,0.03)
   }
   print eV[i],tdos_up[i],tdos_down[i]
 }

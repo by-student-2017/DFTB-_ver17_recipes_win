@@ -27,7 +27,7 @@ do for [i=1:300]{
   dos_down[i] = 0.0
   do for [j=1:BN/2]{
     dos_up[i] = dos_up[i] + gauss(eV[i],datax[j],datay[j],0.03)
-    dos_down[i] = dos_down[i] + gauss(eV[i],datax[j+BN/2],datay[j+BN/2],0.03)
+    dos_down[i] = dos_down[i] + gauss(eV[i],datax[j+TN/2],datay[j+TN/2],0.03)
   }
   print eV[i],dos_up[i],dos_down[i]
 }

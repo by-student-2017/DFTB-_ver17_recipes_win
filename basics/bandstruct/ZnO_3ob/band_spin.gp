@@ -14,7 +14,7 @@ stats "band.dat" using (data[$0+1] = $1, 0) nooutput
 set print "band_spin.plot"
 do for [i=1:BN/2]{
   do for [j=PN*(i-1)+1:PN*i]{
-    print i,data[j],data[j+BN/2]
+    print i,data[j],data[j+TN/2]
   }
 }
 
