@@ -54,9 +54,7 @@ Hamiltonian = DFTB {
 }
 
 Options = {
-  WriteDetailedXML = Yes
-  WriteResultsTag = Yes
-  #WriteEigenvectors = Yes
+  WriteAutotestTag = Yes
 }
 
 Analysis {

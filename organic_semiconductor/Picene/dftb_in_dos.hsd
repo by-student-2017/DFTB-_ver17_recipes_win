@@ -1,0 +1,83 @@
+Geometry = GenFormat {
+  <<< "geo_end.gen"
+}
+
+Driver = {}
+#Driver = ConjugateGradient {
+#  LatticeOpt = Yes
+#  MovedAtoms = 1:-1
+#  MaxForceComponent = 1.0e-4 # 0.0001
+  #MaxSteps = 1000
+  #OutputPrefix = "geom.out"
+#}
+
+Hamiltonian = DFTB {
+  SCC = Yes
+  SCCTolerance = 1.0e-3 # 0.001
+  Charge =  0.0
+  SlaterKosterFiles = Type2FileNames {
+    Prefix = ".\mio-1-1\"
+    Separator = "-"
+    Suffix = ".skf"
+  }
+  KPointsAndWeights = SupercellFolding {
+    4 0 0
+    0 4 0
+    0 0 2
+    0.0 0.0 0.0
+  }
+  MaxAngularMomentum {
+    C = "p"
+    H = "s"
+  }
+  #ThirdOrderFull = Yes
+  #HubbardDerivs {
+  #  C = -0.1492
+  #  H = -0.1857
+    #O = -0.1575
+    #N = -0.1535
+    #S = -0.11
+    #P = -0.14
+  #}
+  #DampXH = Yes
+  #DampXHExponent = 4.00
+  #HCorrection = H5 {}
+  Dispersion = DftD3 {
+    Damping = BeckeJohnson {
+      a1 = 0.5719
+      a2 = 3.6017
+    }
+    s6 = 1.0
+    s8 = 0.5883
+    #Threebody = Yes
+  }
+}
+
+Options = {
+  WriteAutotestTag = Yes
+}
+
+Analysis {
+  ProjectStates {
+    Region {
+      Atoms = C
+      ShellResolved = Yes
+      Label = "dos_c"
+    }
+    Region {
+      Atoms = H
+      ShellResolved = Yes
+      Label = "dos_h"
+    }
+  }
+}
+
+ParserOptions = {
+  ParserVersion = 5
+}
+
+#Parallel {
+  # Allow OMP threads explicitely to test for hybrid parallelisation with
+  # MPI-binary. (Check the manual before using this in production runs!)
+#  UseOmpThreads = Yes
+#}

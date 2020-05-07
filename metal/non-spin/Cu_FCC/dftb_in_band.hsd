@@ -39,11 +39,10 @@ Hamiltonian = DFTB {
 
 Options = {
   WriteAutotestTag = Yes
-  CalculateForces = Yes
 }
 
 ParserOptions = {
-  ParserVersion = 3
+  ParserVersion = 5
 }
 
 #Parallel {

@@ -62,12 +62,14 @@ Hamiltonian = DFTB {
 }
 
 Options = {
-  WriteDetailedXML = Yes
-  WriteResultsTag = Yes
-  #WriteEigenvectors = Yes
+  WriteAutotestTag = Yes
 }
 
-ParserOptions { 
+Analysis = {
+  CalculateForces = Yes
+}
+
+ParserOptions = {
   ParserVersion = 5
 }
 

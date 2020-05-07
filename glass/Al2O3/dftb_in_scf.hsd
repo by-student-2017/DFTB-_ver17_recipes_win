@@ -61,11 +61,14 @@ Hamiltonian = DFTB {
 
 Options = {
   WriteAutotestTag = Yes
+}
+
+Analysis = {
   CalculateForces = Yes
 }
 
 ParserOptions = {
-  ParserVersion = 3
+  ParserVersion = 5
 }
 
 #Parallel {
@@ -73,3 +76,4 @@ ParserOptions = {
   # MPI-binary. (Check the manual before using this in production runs!)
 #  UseOmpThreads = Yes
 #}
+
