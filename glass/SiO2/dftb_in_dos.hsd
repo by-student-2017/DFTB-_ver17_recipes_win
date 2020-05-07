@@ -16,7 +16,7 @@ Hamiltonian = DFTB {
   ReadInitialCharges = Yes
   Mixer = Broyden {}
   MaxAngularMomentum = {
-    Al = "p"
+    Si = "p"
      O = "p"
   }
   Charge = 0.0

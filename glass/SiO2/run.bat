@@ -20,15 +20,25 @@ move tdos.plot .\plot\tdos.plot
 move tdos.png .\plot\tdos.png
 copy info_gnu.dat .\plot\info_gnu.dat
 
-find /v "KPT" <dos_al.1.out> dos.dat
+find /v "KPT" <dos_si.1.out> dos.dat
 gnuplot pdos.gp
-move dos.png .\plot\dos_al.s.png
-move dos.plot .\plot\dos_al.s.plot
+move dos.png .\plot\dos_si.s.png
+move dos.plot .\plot\dos_si.s.plot
 
-find /v "KPT" <dos_al.2.out> dos.dat
+find /v "KPT" <dos_si.2.out> dos.dat
 gnuplot pdos.gp
-move dos.png .\plot\dos_al.p.png
-move dos.plot .\plot\dos_al.p.plot
+move dos.png .\plot\dos_si.p.png
+move dos.plot .\plot\dos_si.p.plot
+
+find /v "KPT" <dos_o.1.out> dos.dat
+gnuplot pdos.gp
+move dos.png .\plot\dos_o.s.png
+move dos.plot .\plot\dos_o.s.plot
+
+find /v "KPT" <dos_o.2.out> dos.dat
+gnuplot pdos.gp
+move dos.png .\plot\dos_o.p.png
+move dos.plot .\plot\dos_o.p.plot
 
 cd plot
 gnuplot ..\all_dos.gp

@@ -40,6 +40,7 @@ Hamiltonian = DFTB {
   Mixer = Broyden {}
   MaxAngularMomentum = {
     Al = "p"
+     O = "p"
   }
   Charge = 0.0
   Filling = Fermi {

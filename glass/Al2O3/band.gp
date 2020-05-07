@@ -32,7 +32,7 @@ unset table
 set terminal png
 set output "band.png"
 unset xtics
-set yrange [-7:5]
+set yrange [-30:25]
 set ylabel "Energy (eV)"
 plot "band.plot" u 1:2 w p pt 7 ps 0.6 t ""
 
@@ -40,7 +40,7 @@ plot "band.plot" u 1:2 w p pt 7 ps 0.6 t ""
 set terminal png
 set output "band_BE.png"
 unset xtics
-set yrange [7:-5]
+set yrange [30:-25]
 set ylabel "Binding Energy (eV)"
 set xzeroaxis
 plot "band.plot" u 1:(ef-$2) w p pt 7 ps 0.6 t ""

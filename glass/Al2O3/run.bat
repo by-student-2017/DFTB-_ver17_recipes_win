@@ -30,6 +30,16 @@ gnuplot pdos.gp
 move dos.png .\plot\dos_al.p.png
 move dos.plot .\plot\dos_al.p.plot
 
+find /v "KPT" <dos_o.1.out> dos.dat
+gnuplot pdos.gp
+move dos.png .\plot\dos_o.s.png
+move dos.plot .\plot\dos_o.s.plot
+
+find /v "KPT" <dos_o.2.out> dos.dat
+gnuplot pdos.gp
+move dos.png .\plot\dos_o.p.png
+move dos.plot .\plot\dos_o.p.plot
+
 cd plot
 gnuplot ..\all_dos.gp
 copy all_dos.png ..\all_dos.png

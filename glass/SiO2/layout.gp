@@ -17,7 +17,7 @@ set rmargin screen 0.7
 set tmargin screen 0.9
 set bmargin screen 0.1
 set xr[:] noreverse
-set yr[12:-16]
+set yr[30:-15]
 set ytics
 set noxtics
 set ylabel "Binding Energy (eV)"
@@ -28,7 +28,7 @@ set lmargin screen 0.7
 set rmargin screen 0.9
 set tmargin screen 0.9
 set bmargin screen 0.1
-set yr[12:-16]
+set yr[30:-15]
 #set xtics rotate by 90
 #set ytics rotate by 90
 unset ylabel
@@ -50,7 +50,7 @@ set rmargin screen 0.7
 set tmargin screen 0.9
 set bmargin screen 0.1
 set xr[:] noreverse
-set yr[-16:12]
+set yr[-30:15]
 set ytics
 set noxtics
 set ylabel "Energy (eV)"
@@ -61,7 +61,7 @@ set lmargin screen 0.7
 set rmargin screen 0.9
 set tmargin screen 0.9
 set bmargin screen 0.1
-set yr[-16:12]
+set yr[-30:15]
 #set xtics rotate by 90
 #set ytics rotate by 90
 set noxtics
