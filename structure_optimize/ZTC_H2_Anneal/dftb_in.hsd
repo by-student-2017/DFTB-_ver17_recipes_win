@@ -1,0 +1,84 @@
+Geometry = GenFormat {
+  <<< geo.gen
+}
+
+Driver = VelocityVerlet {
+
+  # Using a thermostat, so conserved properties of dynamics are less #
+  # important
+  TimeStep [Femtosecond] = 0.5
+  
+  Thermostat = Andersen {
+    
+    # Probabalistically replaces atomic velocities from a
+    # Maxwell-Boltzmann distribution    
+    ReselectProbability = 0.2
+    ReselectIndividually = Yes
+    
+    # Simulated annealing profile for the temperature
+    Temperature [Kelvin] = TemperatureProfile {
+      constant      1    100.0 # Start
+      linear        9   1500.0 # Ramp up
+      constant     10   1500.0 # 'cook'
+      linear       10    273.0 # Quench
+    }
+    
+    AdaptFillingTemp = Yes # Adjust electron temperature to match
+    
+  }
+  
+  Barostat { # Apply presure control
+    Pressure [Pa] = 1.0E5
+    Timescale [ps] = 0.1
+  }
+  
+  MDRestartFrequency = 10 # Only write output every 10 steps
+  
+  OutputPrefix = "geo_end"
+  
+}
+
+Hamiltonian = DFTB {
+  Charge =  0.0
+  Filling = Fermi {} # electronic temperature is controlled by the thermostat
+  SlaterKosterFiles = Type2FileNames {
+    Prefix = ".\3ob-3-1\"
+    Separator = "-"
+    Suffix = ".skf"
+  }
+  KPointsAndWeights = SupercellFolding {
+    1 0 0
+    0 1 0
+    0 0 1
+    0.0 0.0 0.0
+  }
+  MaxAngularMomentum {
+    C = "p"
+    H = "s"
+  }
+  Eigensolver = DivideAndConquer {}
+  Dispersion = DftD3 {
+    Damping = BeckeJohnson {
+      a1 = 0.746
+      a2 = 4.191
+    }
+    s6 = 1.0
+    s8 = 3.209
+    #Threebody = Yes
+  }
+}
+
+Analysis {
+  MullikenAnalysis = No
+  WriteBandOut = No
+}
+
+Options {  
+  WriteDetailedOut = No
+  RandomSeed = 589105024 # specify the rand number generator
+  # starting seed
+}
+
+ParserOptions { 
+  ParserVersion = 5
+}

@@ -121,7 +121,7 @@ Driver = VelocityVerlet {
 
 Hamiltonian = DFTB {
   SCC = Yes
-  SCCTolerance = 1e-5
+  SCCTolerance = 1e-3
   Filling = Fermi {
     Temperature [Kelvin] = 400.0
   }

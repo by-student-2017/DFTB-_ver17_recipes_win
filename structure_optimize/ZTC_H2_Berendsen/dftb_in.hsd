@@ -1,0 +1,74 @@
+Geometry = GenFormat {
+  <<< geo.gen
+}
+
+Driver = VelocityVerlet {
+  TimeStep [fs] = 0.5
+  MovedAtoms = 1:-1
+  Thermostat = Berendsen {
+    TimeScale [fs] = 100
+    AdaptFillingTemp = Yes
+    Temperature [Kelvin] = TemperatureProfile {
+        constant      1   273.0
+        linear       10  1500.0
+        exponential  10   273.0
+    }
+  }
+  Barostat {
+    Pressure [Pa] = 1e5 # about 1 atm (0.1 MPa)
+    Timescale [ps] = 0.05 # about 0.01 - 0.1 ps
+  }
+}
+
+Hamiltonian = DFTB {
+  SCC = Yes
+  SCCTolerance = 1.0e-3 # 0.001
+  Charge =  0.0
+  SlaterKosterFiles = Type2FileNames {
+    Prefix = ".\3ob-3-1\"
+    Separator = "-"
+    Suffix = ".skf"
+  }
+  KPointsAndWeights = SupercellFolding {
+    1 0 0
+    0 1 0
+    0 0 1
+    0.0 0.0 0.0
+  }
+  MaxAngularMomentum {
+    C = "p"
+    H = "s"
+  }
+  ForceEvaluation = Dynamics
+  Eigensolver = DivideAndConquer {}
+  ThirdOrderFull = Yes
+  HubbardDerivs {
+    C = -0.1492
+    H = -0.1857
+    #O = -0.1575
+    #N = -0.1535
+    #S = -0.11
+    #P = -0.14
+  }
+  DampXH = Yes
+  DampXHExponent = 4.00
+  #HCorrection = H5 {}
+  Dispersion = DftD3 {
+    Damping = BeckeJohnson {
+      a1 = 0.746
+      a2 = 4.191
+    }
+    s6 = 1.0
+    s8 = 3.209
+    #Threebody = Yes
+  }
+}
+
+Options {
+  RandomSeed = 3871906
+  WriteAutotestTag = Yes
+}
+
+ParserOptions { 
+  ParserVersion = 5
+}
